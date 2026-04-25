@@ -25,6 +25,7 @@ const Nav = () => (
       <div className="nav-links">
         <a href="#services">What we build</a>
         <a href="#solutions">Real apps</a>
+        <a href="#clients">Clients</a>
         <a href="#process">How we work</a>
         <a href="#industries">Industries</a>
         <a href="#faq">FAQ</a>
@@ -49,12 +50,13 @@ const Hero = ({ variant }) => {
         {variant === 'split' ? (
           <div className="hero-content">
             <h1 className="display">
-              Apps for the work<br/>
-              your team does <em>every day.</em>
+              Power Apps and web apps<br/>
+              for the work your team<br/>
+              does <em>every day.</em>
             </h1>
             <div className="lede-wrap">
               <p className="lede">
-                We build custom Microsoft Power Apps and web tools — for the leave request, the payslip, the machine check, the stock count, the purchase approval — built around how your people already work.
+                We build custom Microsoft Power Apps and web apps — for the leave request, the payslip, the machine check, the stock count, the purchase approval — built around how your people already work.
               </p>
               <div className="hero-cta">
                 <a href="#contact" className="btn btn-primary">Talk to us <Arrow/></a>
@@ -65,12 +67,12 @@ const Hero = ({ variant }) => {
         ) : variant === 'centered' ? (
           <div className="hero-content">
             <h1 className="display">
-              Power Apps for the<br/>
-              <em>work people</em><br/>
+              Power Apps and web apps<br/>
+              for the <em>work people</em><br/>
               do every day.
             </h1>
             <p className="lede" style={{marginTop:32}}>
-              Custom Microsoft Power Apps and web tools — payslips, leave, machine maintenance, stock counts, approvals — that fit how your people already work.
+              Custom Microsoft Power Apps and web apps — payslips, leave, machine maintenance, stock counts, approvals — that fit how your people already work.
             </p>
             <div className="hero-cta">
               <a href="#contact" className="btn btn-primary">Talk to us <Arrow/></a>
@@ -81,11 +83,11 @@ const Hero = ({ variant }) => {
           <div className="hero-content">
             <h1 className="display">
               Microsoft Power Apps<br/>
-              for the <em>real, everyday<br/>
-              work</em> of a business.
+              and <em>web apps</em> for the<br/>
+              everyday work of a business.
             </h1>
             <p className="lede" style={{marginTop:40}}>
-              We build custom Power Apps and web tools — for the leave request, the payslip, the maintenance check, the stock count, the purchase approval. The small everyday things that, done well, make a business run smoother.
+              We build custom Power Apps and web apps — for the leave request, the payslip, the maintenance check, the stock count, the purchase approval. The small everyday things that, done well, make a business run smoother.
             </p>
             <div className="hero-cta">
               <a href="#contact" className="btn btn-primary">Talk to us <Arrow/></a>

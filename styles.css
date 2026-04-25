@@ -353,6 +353,72 @@ section {
 @media (max-width: 1024px) { .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 540px)  { .solutions-grid { grid-template-columns: 1fr; } }
 
+/* Clients we've worked with */
+.clients-section { background: var(--bg-2); }
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.client-tile {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.client-tile:hover {
+  border-color: var(--ink);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -28px rgba(20, 18, 16, 0.4);
+}
+.client-logo {
+  background: #ffffff;
+  border-bottom: 1px solid var(--rule);
+  aspect-ratio: 16 / 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 48px;
+}
+.client-logo img {
+  max-width: 70%;
+  max-height: 80%;
+  object-fit: contain;
+  display: block;
+}
+.client-wordmark {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1;
+  text-transform: lowercase;
+  font-style: italic;
+}
+.client-meta {
+  padding: 22px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.client-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.client-sector {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+@media (max-width: 700px) { .clients-grid { grid-template-columns: 1fr; } }
+
 /* Process */
 .process-list { display: grid; grid-template-columns: 1fr; gap: 0; }
 .process-step {
