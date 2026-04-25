@@ -1,178 +1,265 @@
-/* Services, Process, Cases */
+/* What we build (services), Real apps (solutions), How we work (process) */
 
-const ServiceVisual = ({ kind }) => {
-  const stroke = "currentColor";
-  const accent = "var(--accent)";
+/* ---------- shared icon helpers ---------- */
+
+const SvgIcon = ({ children, viewBox = "0 0 64 64" }) => (
+  <svg viewBox={viewBox} fill="none" stroke="currentColor" strokeWidth="1.5"
+       strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    {children}
+  </svg>
+);
+
+/* Service category icons (large, ~64x64) */
+const ServiceArt = ({ kind }) => {
   switch (kind) {
-    case "powerapps":
+    case "hr":
       return (
-        <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="20" y="20" width="280" height="140" rx="6" stroke={stroke} strokeWidth="1"/>
-          <line x1="20" y1="44" x2="300" y2="44" stroke={stroke} strokeWidth="1"/>
-          <circle cx="34" cy="32" r="2.5" fill={stroke}/>
-          <circle cx="44" cy="32" r="2.5" fill={stroke}/>
-          <circle cx="54" cy="32" r="2.5" fill={stroke}/>
-          {[0,1,2,3].map(i => (
-            <rect key={`c${i}`} x={36 + i*64} y="60" width="52" height="36" rx="3" stroke={stroke} strokeWidth="1"/>
-          ))}
-          {[0,1,2,3].map(i => (
-            <rect key={`r${i}`} x={36 + i*64} y="108" width="52" height="36" rx="3" stroke={stroke} strokeWidth="1" fill={i === 1 ? accent : "none"} opacity={i === 1 ? 0.9 : 1}/>
-          ))}
-          <text x="36" y="158" fontFamily="JetBrains Mono, monospace" fontSize="9" fill={stroke} opacity="0.6" letterSpacing="1.2">CANVAS · MODEL-DRIVEN · CODE APPS</text>
-        </svg>
+        <SvgIcon>
+          <rect x="8" y="14" width="48" height="36" rx="4"/>
+          <circle cx="22" cy="28" r="5"/>
+          <path d="M14 42c0-5 4-8 8-8s8 3 8 8"/>
+          <line x1="36" y1="26" x2="50" y2="26"/>
+          <line x1="36" y1="33" x2="48" y2="33"/>
+          <line x1="36" y1="40" x2="50" y2="40"/>
+        </SvgIcon>
       );
-    case "sharepoint":
+    case "maintenance":
       return (
-        <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="20" y="20" width="280" height="140" rx="6" stroke={stroke} strokeWidth="1"/>
-          <line x1="20" y1="42" x2="300" y2="42" stroke={stroke} strokeWidth="1"/>
-          <line x1="84" y1="42" x2="84" y2="160" stroke={stroke} strokeWidth="1"/>
-          <circle cx="34" cy="31" r="2.5" fill={stroke}/>
-          <circle cx="44" cy="31" r="2.5" fill={stroke}/>
-          <circle cx="54" cy="31" r="2.5" fill={stroke}/>
-          {[0,1,2,3].map(i => (
-            <line key={i} x1="32" y1={60 + i*22} x2="72" y2={60 + i*22} stroke={stroke} strokeWidth="1" opacity="0.4"/>
-          ))}
-          <line x1="32" y1="60" x2="72" y2="60" stroke={accent} strokeWidth="2"/>
-          <rect x="100" y="58" width="184" height="42" rx="3" stroke={stroke} strokeWidth="1"/>
-          <line x1="110" y1="72" x2="190" y2="72" stroke={stroke} strokeWidth="1"/>
-          <line x1="110" y1="82" x2="240" y2="82" stroke={stroke} strokeWidth="1" opacity="0.4"/>
-          <line x1="110" y1="90" x2="220" y2="90" stroke={stroke} strokeWidth="1" opacity="0.4"/>
-          <rect x="100" y="112" width="86" height="40" rx="3" stroke={stroke} strokeWidth="1"/>
-          <rect x="198" y="112" width="86" height="40" rx="3" stroke={stroke} strokeWidth="1"/>
-        </svg>
+        <SvgIcon>
+          <path d="M20 44 L40 24 M16 48 L20 44 M40 24 L36 20"/>
+          <path d="M14 50 Q10 50 10 46 Q10 42 14 42 L18 46 Q18 50 14 50 Z"/>
+          <circle cx="44" cy="20" r="6"/>
+          <path d="M44 14 L44 16 M44 24 L44 26 M38 20 L40 20 M48 20 L50 20"/>
+          <rect x="46" y="40" width="12" height="12" rx="1"/>
+          <line x1="49" y1="43" x2="51" y2="43"/>
+          <line x1="53" y1="43" x2="55" y2="43"/>
+          <line x1="49" y1="46" x2="55" y2="46"/>
+          <line x1="49" y1="49" x2="51" y2="49"/>
+        </SvgIcon>
       );
-    case "automate":
+    case "inventory":
       return (
-        <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="50" cy="40" r="14" stroke={stroke} strokeWidth="1"/>
-          <circle cx="50" cy="90" r="14" stroke={stroke} strokeWidth="1"/>
-          <circle cx="160" cy="65" r="14" stroke={stroke} strokeWidth="1" fill={accent} fillOpacity="0.9"/>
-          <circle cx="270" cy="40" r="14" stroke={stroke} strokeWidth="1"/>
-          <circle cx="270" cy="90" r="14" stroke={stroke} strokeWidth="1"/>
-          <circle cx="160" cy="140" r="14" stroke={stroke} strokeWidth="1"/>
-          <path d="M64 40 Q110 40 146 60" stroke={stroke} strokeWidth="1" fill="none"/>
-          <path d="M64 90 Q110 90 146 70" stroke={stroke} strokeWidth="1" fill="none"/>
-          <path d="M174 60 Q210 40 256 40" stroke={stroke} strokeWidth="1" fill="none"/>
-          <path d="M174 70 Q210 90 256 90" stroke={stroke} strokeWidth="1" fill="none"/>
-          <path d="M160 79 L160 126" stroke={stroke} strokeWidth="1" fill="none"/>
-          <text x="44" y="44" fontFamily="JetBrains Mono, monospace" fontSize="8" fill={stroke}>IN</text>
-          <text x="42" y="94" fontFamily="JetBrains Mono, monospace" fontSize="8" fill={stroke}>IN</text>
-          <text x="263" y="44" fontFamily="JetBrains Mono, monospace" fontSize="8" fill={stroke}>OK</text>
-          <text x="261" y="94" fontFamily="JetBrains Mono, monospace" fontSize="8" fill={stroke}>OUT</text>
-        </svg>
+        <SvgIcon>
+          <rect x="10" y="22" width="18" height="14" rx="1"/>
+          <rect x="36" y="22" width="18" height="14" rx="1"/>
+          <rect x="23" y="38" width="18" height="14" rx="1"/>
+          <line x1="19" y1="22" x2="19" y2="36"/>
+          <line x1="45" y1="22" x2="45" y2="36"/>
+          <line x1="32" y1="38" x2="32" y2="52"/>
+          <path d="M12 18 L26 12 L40 18"/>
+        </SvgIcon>
       );
-    case "azure":
+    case "approvals":
       return (
-        <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M70 110 Q40 110 40 84 Q40 60 64 56 Q70 28 102 28 Q132 28 138 54 Q166 50 170 78 Q200 76 206 96 Q236 96 236 118 Q236 132 222 132 L82 132 Q70 132 70 110 Z" stroke={stroke} strokeWidth="1" fill="none"/>
-          <rect x="92" y="78" width="36" height="22" stroke={stroke} strokeWidth="1"/>
-          <rect x="142" y="78" width="36" height="22" stroke={stroke} strokeWidth="1" fill={accent} fillOpacity="0.85"/>
-          <rect x="192" y="78" width="36" height="22" stroke={stroke} strokeWidth="1"/>
-          <line x1="128" y1="89" x2="142" y2="89" stroke={stroke} strokeWidth="1"/>
-          <line x1="178" y1="89" x2="192" y2="89" stroke={stroke} strokeWidth="1"/>
-          <line x1="160" y1="100" x2="160" y2="148" stroke={stroke} strokeWidth="1" strokeDasharray="2 3"/>
-          <rect x="120" y="148" width="80" height="14" stroke={stroke} strokeWidth="1"/>
-          <text x="128" y="158" fontFamily="JetBrains Mono, monospace" fontSize="8" fill={stroke}>ON-PREM</text>
-        </svg>
+        <SvgIcon>
+          <rect x="14" y="10" width="32" height="44" rx="2"/>
+          <line x1="20" y1="20" x2="40" y2="20"/>
+          <line x1="20" y1="26" x2="36" y2="26"/>
+          <line x1="20" y1="32" x2="40" y2="32"/>
+          <path d="M22 42 L28 48 L42 34"/>
+        </SvgIcon>
       );
-    case "powerbi":
+    case "safety":
       return (
-        <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <line x1="40" y1="150" x2="280" y2="150" stroke={stroke} strokeWidth="1"/>
-          <line x1="40" y1="30" x2="40" y2="150" stroke={stroke} strokeWidth="1"/>
-          {[60, 90, 120].map(y => (
-            <line key={y} x1="40" y1={y} x2="280" y2={y} stroke={stroke} strokeWidth="1" opacity="0.15"/>
-          ))}
-          <rect x="60" y="100" width="22" height="50" stroke={stroke} strokeWidth="1"/>
-          <rect x="92" y="80" width="22" height="70" stroke={stroke} strokeWidth="1"/>
-          <rect x="124" y="110" width="22" height="40" stroke={stroke} strokeWidth="1"/>
-          <rect x="156" y="50" width="22" height="100" stroke={stroke} strokeWidth="1" fill={accent} fillOpacity="0.9"/>
-          <rect x="188" y="90" width="22" height="60" stroke={stroke} strokeWidth="1"/>
-          <rect x="220" y="70" width="22" height="80" stroke={stroke} strokeWidth="1"/>
-          <path d="M71 110 L103 90 L135 120 L167 60 L199 100 L231 80" stroke={accent} strokeWidth="1.5" fill="none" opacity="0.7"/>
-        </svg>
+        <SvgIcon>
+          <path d="M32 8 L52 16 V32 Q52 46 32 56 Q12 46 12 32 V16 Z"/>
+          <line x1="32" y1="22" x2="32" y2="36"/>
+          <circle cx="32" cy="42" r="1.5" fill="currentColor"/>
+        </SvgIcon>
       );
-    case "claude":
+    case "ops":
       return (
-        <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="20" y="20" width="280" height="140" rx="6" stroke={stroke} strokeWidth="1"/>
-          <line x1="20" y1="42" x2="300" y2="42" stroke={stroke} strokeWidth="1"/>
-          <circle cx="34" cy="31" r="2.5" fill={stroke}/>
-          <circle cx="44" cy="31" r="2.5" fill={stroke}/>
-          <circle cx="54" cy="31" r="2.5" fill={stroke}/>
-          <text x="36" y="68" fontFamily="JetBrains Mono, monospace" fontSize="11" fill={stroke}>$ claude code review</text>
-          <text x="36" y="86" fontFamily="JetBrains Mono, monospace" fontSize="11" fill={stroke} opacity="0.55">  reading 14 files…</text>
-          <text x="36" y="104" fontFamily="JetBrains Mono, monospace" fontSize="11" fill={accent}>  ✓ 0 type errors</text>
-          <text x="36" y="122" fontFamily="JetBrains Mono, monospace" fontSize="11" fill={stroke} opacity="0.55">  3 suggestions →</text>
-          <text x="36" y="146" fontFamily="JetBrains Mono, monospace" fontSize="11" fill={stroke}>$ <tspan fill={accent}>▍</tspan></text>
-        </svg>
+        <SvgIcon>
+          <rect x="6" y="26" width="34" height="20" rx="2"/>
+          <path d="M40 32 L52 32 L58 38 V46 H40 Z"/>
+          <circle cx="16" cy="48" r="4"/>
+          <circle cx="48" cy="48" r="4"/>
+          <line x1="6" y1="34" x2="40" y2="34"/>
+        </SvgIcon>
       );
-    default:
-      return null;
+    default: return null;
   }
 };
+
+/* Real-app icons (smaller, 64x64 viewBox, line drawings) */
+const SolutionArt = ({ kind }) => {
+  switch (kind) {
+    case "hr-employee":
+      return (
+        <SvgIcon>
+          <rect x="14" y="8" width="36" height="48" rx="3"/>
+          <circle cx="32" cy="22" r="5"/>
+          <path d="M22 36c0-5 4-8 10-8s10 3 10 8"/>
+          <line x1="22" y1="44" x2="42" y2="44"/>
+          <line x1="22" y1="50" x2="36" y2="50"/>
+        </SvgIcon>
+      );
+    case "benefits":
+      return (
+        <SvgIcon>
+          <path d="M32 12 L50 18 V32 Q50 44 32 52 Q14 44 14 32 V18 Z"/>
+          <path d="M26 30 Q26 24 32 24 Q38 24 38 30 Q38 34 32 40 Q26 34 26 30 Z"/>
+        </SvgIcon>
+      );
+    case "machine":
+      return (
+        <SvgIcon>
+          <path d="M14 38 L34 18 M10 42 L14 38 M34 18 L30 14"/>
+          <path d="M8 44 Q4 44 4 40 Q4 36 8 36 L12 40 Q12 44 8 44 Z"/>
+          <circle cx="38" cy="14" r="5"/>
+          <rect x="40" y="34" width="20" height="20" rx="1"/>
+          <rect x="44" y="38" width="4" height="4" fill="currentColor"/>
+          <rect x="52" y="38" width="4" height="4" fill="currentColor"/>
+          <rect x="44" y="46" width="4" height="4" fill="currentColor"/>
+          <rect x="50" y="46" width="2" height="2" fill="currentColor"/>
+          <rect x="54" y="46" width="2" height="2" fill="currentColor"/>
+        </SvgIcon>
+      );
+    case "qa":
+      return (
+        <SvgIcon>
+          <rect x="14" y="10" width="36" height="48" rx="3"/>
+          <rect x="24" y="6" width="16" height="8" rx="2"/>
+          <path d="M20 24 L24 28 L30 22" />
+          <line x1="34" y1="26" x2="44" y2="26"/>
+          <path d="M20 36 L24 40 L30 34"/>
+          <line x1="34" y1="38" x2="44" y2="38"/>
+          <path d="M20 48 L24 52 L30 46"/>
+          <line x1="34" y1="50" x2="42" y2="50"/>
+        </SvgIcon>
+      );
+    case "ticketing":
+      return (
+        <SvgIcon>
+          <path d="M8 22 V42 Q8 44 10 44 H54 Q56 44 56 42 V22 Q56 20 54 20 H10 Q8 20 8 22 Z"/>
+          <path d="M22 20 V44 M22 24 V28 M22 32 V36 M22 40 V42"/>
+          <circle cx="38" cy="32" r="4"/>
+          <line x1="44" y1="32" x2="50" y2="32"/>
+          <line x1="30" y1="32" x2="34" y2="32"/>
+        </SvgIcon>
+      );
+    case "assets":
+      return (
+        <SvgIcon>
+          <rect x="10" y="14" width="44" height="28" rx="2"/>
+          <line x1="6" y1="48" x2="58" y2="48"/>
+          <rect x="40" y="22" width="16" height="10" rx="1" fill="currentColor" fillOpacity="0.15"/>
+          <line x1="14" y1="22" x2="34" y2="22"/>
+          <line x1="14" y1="28" x2="34" y2="28"/>
+          <line x1="14" y1="34" x2="28" y2="34"/>
+        </SvgIcon>
+      );
+    case "sales":
+      return (
+        <SvgIcon>
+          <path d="M14 22 L18 12 H46 L50 22 Z"/>
+          <path d="M14 22 V52 H50 V22"/>
+          <path d="M24 22 V18 Q24 12 32 12 Q40 12 40 18 V22"/>
+        </SvgIcon>
+      );
+    case "truck":
+      return (
+        <SvgIcon>
+          <rect x="6" y="22" width="32" height="20" rx="1"/>
+          <path d="M38 28 L52 28 L58 34 V42 H38 Z"/>
+          <circle cx="16" cy="46" r="4"/>
+          <circle cx="46" cy="46" r="4"/>
+          <line x1="6" y1="42" x2="38" y2="42"/>
+        </SvgIcon>
+      );
+    case "purchase":
+      return (
+        <SvgIcon>
+          <rect x="14" y="10" width="36" height="48" rx="3"/>
+          <line x1="22" y1="22" x2="42" y2="22"/>
+          <line x1="22" y1="30" x2="42" y2="30"/>
+          <line x1="22" y1="38" x2="36" y2="38"/>
+          <circle cx="44" cy="46" r="8"/>
+          <path d="M40 46 L43 49 L48 43"/>
+        </SvgIcon>
+      );
+    case "stock":
+      return (
+        <SvgIcon>
+          <rect x="8" y="14" width="22" height="16" rx="1"/>
+          <rect x="34" y="14" width="22" height="16" rx="1"/>
+          <rect x="8" y="34" width="22" height="16" rx="1"/>
+          <rect x="34" y="34" width="22" height="16" rx="1"/>
+          <line x1="19" y1="14" x2="19" y2="30"/>
+          <line x1="45" y1="14" x2="45" y2="30"/>
+          <line x1="19" y1="34" x2="19" y2="50"/>
+          <line x1="45" y1="34" x2="45" y2="50"/>
+        </SvgIcon>
+      );
+    case "incident":
+      return (
+        <SvgIcon>
+          <path d="M32 8 L58 52 H6 Z"/>
+          <line x1="32" y1="24" x2="32" y2="38"/>
+          <circle cx="32" cy="44" r="1.6" fill="currentColor"/>
+        </SvgIcon>
+      );
+    case "fleet":
+      return (
+        <SvgIcon>
+          <rect x="10" y="22" width="40" height="16" rx="3"/>
+          <path d="M14 22 L18 12 H42 L46 22"/>
+          <circle cx="20" cy="42" r="4"/>
+          <circle cx="40" cy="42" r="4"/>
+          <line x1="14" y1="30" x2="22" y2="30"/>
+          <line x1="38" y1="30" x2="46" y2="30"/>
+          <path d="M50 50 Q56 50 56 44" strokeDasharray="2 3"/>
+        </SvgIcon>
+      );
+    default: return null;
+  }
+};
+
+/* ---------- Services: six categories of work ---------- */
 
 const ServicesSection = () => {
   const services = [
     {
       n: "01",
-      kind: "powerapps",
-      title: "Apps your team will actually use",
-      desc: "Custom apps that fit how your people already work — replacing the spreadsheet trail, the back-and-forth emails, and the \"we just do it that way\" processes everyone secretly hates.",
-      tags: ["Phone", "Tablet", "Desktop"],
-      repo: "https://github.com/maxwelltaprah-prog/PowerAppsCodeApps",
-      repoLabel: "PowerAppsCodeApps",
-      img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/PowerApps.png"
+      kind: "hr",
+      title: "HR & people apps",
+      desc: "The everyday tools your staff use to do the people-stuff: payslips, leave requests, benefits, employee directories, and idea boards.",
+      examples: ["Payslips", "Leave", "Benefits", "Idea portal"]
     },
     {
       n: "02",
-      kind: "sharepoint",
-      title: "A staff homepage everyone can find",
-      desc: "One branded place where your people find news, holidays, HR forms, and the colleagues they need — instead of hunting across email threads and shared drives.",
-      tags: ["Branded", "On phones", "Easy to update"],
-      repo: "https://github.com/maxwelltaprah-prog/sharepoint-intranet-mockups",
-      repoLabel: "sharepoint-intranet-mockups",
-      iframe: "mockups/mockup_1.html"
+      kind: "maintenance",
+      title: "Maintenance & quality checks",
+      desc: "Apps for the people on the floor — machine inspections, work orders, GMP checklists, and QR-coded spare parts so the right part is one scan away.",
+      examples: ["Machine checks", "QR spare parts", "GMP checklist"]
     },
     {
       n: "03",
-      kind: "automate",
-      title: "Workflows that run themselves",
-      desc: "The boring, repeating jobs — approvals, reminders, paperwork shuffling between systems — handled in the background so people can do real work.",
-      tags: ["Approvals", "Reminders", "Auto-sync"],
-      repo: "https://github.com/maxwelltaprah-prog/PowerApps---RDORRANI",
-      repoLabel: "PowerApps---RDORRANI",
-      img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Flow.png"
+      kind: "inventory",
+      title: "Inventory, stock & assets",
+      desc: "Stock counts that match what's actually on the shelf, and a clean register of every laptop, vehicle and piece of kit — who has it, when it's due back, and what it's worth.",
+      examples: ["Stock count", "Asset register", "Allocation"]
     },
     {
       n: "04",
-      kind: "azure",
-      title: "Joining up the systems you already pay for",
-      desc: "Most companies own ten tools that don't talk to each other. We make them talk — so data flows, alerts get sent, and reports update without anyone copying numbers between tabs.",
-      tags: ["Connected", "Reliable", "Secure"],
-      repo: "https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio",
-      repoLabel: "Azure-Stencils-Pack",
-      img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Azure.png"
+      kind: "approvals",
+      title: "Approvals & paperwork",
+      desc: "Purchase requests, approval chains, and any other form-and-signature trail — digitised so things move in hours, not days, with a clear audit trail.",
+      examples: ["Purchase requests", "Approvals", "Audit trail"]
     },
     {
       n: "05",
-      kind: "powerbi",
-      title: "Dashboards leadership will actually open",
-      desc: "Numbers from across the business in one screen — sales, costs, people, jobs done — refreshed automatically. Open it Monday morning and you know where you stand.",
-      tags: ["Live data", "Easy filters", "Phone-friendly"],
-      repo: "https://github.com/maxwelltaprah-prog?tab=repositories",
-      repoLabel: "Reporting work",
-      img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Power-BI.png"
+      kind: "safety",
+      title: "Safety & incidents",
+      desc: "A simple way to log incidents and near-misses, prioritise the serious ones, and spot patterns before someone gets hurt.",
+      examples: ["Incident log", "Near-miss", "Safety dashboard"]
     },
     {
       n: "06",
-      kind: "claude",
-      title: "AI helpers that let us build faster",
-      desc: "We pair our engineers with AI assistants in a careful, reviewed workflow. You get the same quality, sooner — and a more honest scope from day one.",
-      tags: ["AI-assisted", "Reviewed", "Faster"],
-      repo: "https://github.com/maxwelltaprah-prog/claude-code",
-      repoLabel: "claude-code"
+      kind: "ops",
+      title: "Operations & logistics",
+      desc: "The day-to-day movement-of-things layer: truck scheduling, fleet servicing, IT helpdesks, internal sales — joined up to the systems you already use.",
+      examples: ["Truck scheduling", "Fleet service", "IT helpdesk"]
     }
   ];
   return (
@@ -183,48 +270,29 @@ const ServicesSection = () => {
             <div className="eyebrow">What we build</div>
           </div>
           <div>
-            <h2 className="h2">Six things we build, all the <em>time.</em></h2>
+            <h2 className="h2">Six kinds of apps, all <em>day, every day.</em></h2>
             <p className="lede" style={{marginTop:24}}>
-              We work on the Microsoft tools most companies already own — so you don't end up paying for another platform. Each card below links to real working code on <a href="https://github.com/maxwelltaprah-prog" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>our GitHub</a> so you can see what we ship.
+              We're a Microsoft Power Apps studio. We design, build and roll out the everyday tools that quietly run a business — from the staff payslip screen on someone's phone to the maintenance check on the factory floor.
             </p>
           </div>
         </div>
         <div className="services-grid">
           {services.map(s => (
-            <a className="service-card" key={s.n} href={s.repo} target="_blank" rel="noopener">
+            <div className="service-card" key={s.n}>
               <div className="service-card-visual">
-                {s.img ? (
-                  <img src={s.img} alt={`${s.title} reference visual from the Microsoft Integration & Azure Stencils Pack`} loading="lazy"/>
-                ) : s.iframe ? (
-                  <div className="service-card-iframe-wrap">
-                    <iframe src={s.iframe} title={s.title} loading="lazy" tabIndex="-1" scrolling="no"/>
-                    <div className="service-card-iframe-veil"/>
-                  </div>
-                ) : (
-                  <ServiceVisual kind={s.kind}/>
-                )}
+                <ServiceArt kind={s.kind}/>
               </div>
               <div className="service-card-body">
                 <div className="service-card-meta">
                   <span className="service-num">{s.n} /</span>
-                  <span className="service-card-repo">
-                    <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                      <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.34c-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.89-1.16-.89-1.16-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.77-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 3.95c.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.83 1.28.83 2.15 0 3.07-1.87 3.74-3.65 3.94.29.25.54.74.54 1.49v2.21c0 .21.15.46.55.38A8 8 0 0 0 8 0z"/>
-                    </svg>
-                    {s.repoLabel}
-                  </span>
                 </div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <div className="service-tags">
-                  {s.tags.map(t => <span className="service-tag" key={t}>{t}</span>)}
+                  {s.examples.map(t => <span className="service-tag" key={t}>{t}</span>)}
                 </div>
-                <span className="service-card-cta">
-                  View repository
-                  <Arrow/>
-                </span>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
@@ -232,10 +300,120 @@ const ServicesSection = () => {
   );
 };
 
+/* ---------- Solutions: real apps from the project list ---------- */
+
+const SolutionsSection = () => {
+  const solutions = [
+    {
+      kind: "hr-employee",
+      tag: "HR · Power Apps",
+      title: "HR Employee App",
+      desc: "Payslips, company policies and leave requests in one tap. Staff log in from their phone and find everything they used to chase from HR by email."
+    },
+    {
+      kind: "benefits",
+      tag: "HR · Power Apps",
+      title: "Employee Benefits App",
+      desc: "A personalised view of every benefit a staff member is entitled to — health cover, retirement, time off — plus claim submission and reminders before deadlines pass."
+    },
+    {
+      kind: "machine",
+      tag: "Maintenance · Power Apps",
+      title: "Machine Maintenance App",
+      desc: "Scan the QR code on a machine, see its history, the right spare part and how to fit it. Engineers log faults, request parts and close jobs without paperwork."
+    },
+    {
+      kind: "qa",
+      tag: "Quality · Power Apps",
+      title: "QA / GMP Checklist App",
+      desc: "Factory-floor quality checks that follow your own rules. Workers tick off the steps, snap photos as evidence, and managers see the results live on a dashboard."
+    },
+    {
+      kind: "ticketing",
+      tag: "IT · Power Apps",
+      title: "IT Ticketing & Incident App",
+      desc: "Staff raise IT problems from their desk or their phone. Tickets are sorted by urgency, routed to the right team, and tracked to resolution."
+    },
+    {
+      kind: "assets",
+      tag: "IT · Power Apps",
+      title: "IT Assets Management Portal",
+      desc: "A clean register of every laptop, phone, printer and software licence — who has it, when it's due back, and when it'll need replacing."
+    },
+    {
+      kind: "sales",
+      tag: "Staff · Power Apps",
+      title: "Staff Sales App",
+      desc: "An in-house shop where staff can browse, buy and reorder company products from their phone — with employee discounts and order history built in."
+    },
+    {
+      kind: "truck",
+      tag: "Logistics · Power Apps",
+      title: "Truck Scheduling App",
+      desc: "Send truck-detail requests to vendors over WhatsApp; once they confirm, the data flows straight back into the dashboard so the warehouse can plan loading."
+    },
+    {
+      kind: "purchase",
+      tag: "Procurement · Power Apps",
+      title: "Purchase Requisition Portal",
+      desc: "Staff raise a purchase request, it routes to the right approver based on cost, the approver sees the live budget, and every step is logged for audit."
+    },
+    {
+      kind: "stock",
+      tag: "Warehouse · Power Apps",
+      title: "Stock Count App",
+      desc: "Warehouse staff count stock from their phones and reconcile against the system in real time. Anything that doesn't match flags up immediately."
+    },
+    {
+      kind: "incident",
+      tag: "Safety · Power Apps",
+      title: "Workplace Incident App",
+      desc: "Anyone can log an incident or near-miss in seconds. Severity is colour-coded, owners are assigned, and managers can see what's open at a glance."
+    },
+    {
+      kind: "fleet",
+      tag: "Fleet · Power Apps",
+      title: "Fleet Management Portal",
+      desc: "Every company vehicle in one place — service requests, approvals, cost history, and alerts when the next service is due."
+    }
+  ];
+  return (
+    <section id="solutions">
+      <div className="wrap">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow">Real apps we've built</div>
+          </div>
+          <div>
+            <h2 className="h2">Twelve apps already <em>in people's pockets.</em></h2>
+            <p className="lede" style={{marginTop:24}}>
+              Each card below is a real Microsoft Power App we've delivered for a business — the kind of small everyday tools that, between them, save thousands of hours a year.
+            </p>
+          </div>
+        </div>
+        <div className="solutions-grid">
+          {solutions.map(s => (
+            <div className="solution-card" key={s.title}>
+              <div className="solution-icon"><SolutionArt kind={s.kind}/></div>
+              <div className="solution-body">
+                <div className="solution-tag">{s.tag}</div>
+                <h3 className="solution-title">{s.title}</h3>
+                <p className="solution-desc">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ---------- Process ---------- */
+
 const ProcessSection = () => {
   const steps = [
-    { n: "01", title: "Listen",     desc: "We sit with your team for a couple of weeks and find the one thing that, if fixed, would save the most time or money. No 80-page audit, no slide deck.", out: "A clear write-up of what's worth building", dur: "1 — 2 weeks" },
-    { n: "02", title: "Sketch",     desc: "We mock up a working version you can click through within days. Your people react to a real screen instead of a slide.", out: "A clickable demo and an honest scope", dur: "2 — 3 weeks" },
+    { n: "01", title: "Listen",     desc: "We sit with your team for a couple of weeks and find the one thing that, if fixed, would save the most time. No 80-page audit, no slide deck.", out: "A clear write-up of what's worth building", dur: "1 — 2 weeks" },
+    { n: "02", title: "Sketch",     desc: "We mock up a working version you can click through within days. Your people react to a real screen — not a slide.", out: "A clickable demo and an honest scope", dur: "2 — 3 weeks" },
     { n: "03", title: "Build",      desc: "A small senior team ships it in weekly chunks. You see the latest version every Friday and can change direction at the end of any week.", out: "A live, working app — every week", dur: "4 — 12 weeks" },
     { n: "04", title: "Hand over",  desc: "We hand over a clean, documented app — or stay on as your retained team — with training, monitoring, and a list of what to do next.", out: "Documentation, training, and a roadmap", dur: "Ongoing if you want" }
   ];
@@ -274,168 +452,4 @@ const ProcessSection = () => {
   );
 };
 
-const CasesSection = () => {
-  const cases = [
-    {
-      industry: "For staff at work",
-      title: "A SharePoint pattern library — three reusable intranets",
-      desc: "An open library of three ready-to-rebrand staff homepages: a corporate page, a maintenance team dashboard, and a leadership briefing. Any business can clone it and replace the logos.",
-      stat: "3", statLabel: "Reusable templates",
-      repo: "https://github.com/maxwelltaprah-prog/sharepoint-intranet-mockups",
-      repoLabel: "sharepoint-intranet-mockups"
-    },
-    {
-      industry: "For architects and consultants",
-      title: "A free shape pack for drawing Microsoft systems",
-      desc: "The diagrams consultants draw to explain a Microsoft setup — Power Apps, Azure, Office 365, integration patterns. We maintain a free pack used by teams across the industry.",
-      stat: "27", statLabel: "Stencil sheets shared",
-      repo: "https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio",
-      repoLabel: "Azure-Stencils-Pack"
-    },
-    {
-      industry: "For developers building inside Microsoft",
-      title: "Power Apps, but built in proper code",
-      desc: "Most Power Apps work is drag-and-drop; ours is written in TypeScript so it's easier to test, review and hand over. The starter we use is open for any team.",
-      stat: "TypeScript", statLabel: "Type-safe by default",
-      repo: "https://github.com/maxwelltaprah-prog/PowerAppsCodeApps",
-      repoLabel: "PowerAppsCodeApps"
-    },
-    {
-      industry: "For teams using AI assistants",
-      title: "An enterprise-grade rebuild of Claude Code",
-      desc: "We rebuilt Anthropic's coding assistant from the ground up in TypeScript with full type-checking — so we and other teams can use it inside enterprise environments with confidence.",
-      stat: "0 errors", statLabel: "Type-checked end to end",
-      repo: "https://github.com/maxwelltaprah-prog/claude-code",
-      repoLabel: "claude-code"
-    }
-  ];
-  return (
-    <section id="work">
-      <div className="wrap">
-        <div className="section-head">
-          <div>
-            <div className="eyebrow">Things we've shipped</div>
-          </div>
-          <div>
-            <h2 className="h2">Real projects you can <em>open right now.</em></h2>
-            <p className="lede" style={{marginTop:24}}>
-              We publish a lot of what we build. Each card below links to working code on GitHub — open it, read it, copy it. No screenshots-of-screenshots, no NDA brochure-ware.
-            </p>
-          </div>
-        </div>
-        <div className="cases cases-real">
-          {cases.map((c, i) => (
-            <a className="case" key={i} href={c.repo} target="_blank" rel="noopener">
-              <div className="case-meta">
-                <span className="case-industry">{c.industry}</span>
-                <span className="case-year">
-                  <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                    <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.34c-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.89-1.16-.89-1.16-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.77-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 3.95c.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.83 1.28.83 2.15 0 3.07-1.87 3.74-3.65 3.94.29.25.54.74.54 1.49v2.21c0 .21.15.46.55.38A8 8 0 0 0 8 0z"/>
-                  </svg>
-                  {c.repoLabel}
-                </span>
-              </div>
-              <h3>{c.title}</h3>
-              <p className="case-desc">{c.desc}</p>
-              <div style={{marginTop:'auto'}}>
-                <div className="case-stat">{c.stat}</div>
-                <div className="case-stat-label">{c.statLabel}</div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const ToolkitSection = () => {
-  const base = "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media";
-  const tiles = [
-    { name: "Power Apps",            file: "PowerApps.png" },
-    { name: "Power Automate",        file: "Microsoft-Flow.png" },
-    { name: "Power BI",              file: "Microsoft-Power-BI.png" },
-    { name: "Microsoft Azure",       file: "Microsoft-Azure.png" },
-    { name: "Office 365",            file: "MIS-Office-365.png" },
-    { name: "Integration Patterns",  file: "MIS-Integration-Patterns.png" },
-    { name: "Apps & Systems",        file: "MIS-Apps-and-Systems-Logo-Stencils.png" },
-    { name: "Security & Governance", file: "MIS-Security-and-governance-stencils.png" }
-  ];
-  return (
-    <section id="toolkit">
-      <div className="wrap">
-        <div className="section-head">
-          <div>
-            <div className="eyebrow">Things we've shared</div>
-          </div>
-          <div>
-            <h2 className="h2">Tools we built once and <em>gave away.</em></h2>
-            <p className="lede" style={{marginTop:24}}>
-              When something's useful for one client, it's usually useful for the next — so we publish it for free. Below is our <a href="https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>shape pack</a> for drawing Microsoft systems, used by teams across the industry.
-            </p>
-          </div>
-        </div>
-        <a href="https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio" target="_blank" rel="noopener" className="toolkit-hero">
-          <img src={`${base}/BizTalk-Microsoft-Integration-Azure-Stencils-Pack.png`} alt="Cover art for our Microsoft Integration and Azure shape pack — a free library we publish on GitHub" loading="lazy"/>
-          <div className="toolkit-hero-meta">
-            <span className="mono">Free download</span>
-            <span>Shape pack — Microsoft &amp; Azure</span>
-          </div>
-        </a>
-        <div className="toolkit-grid">
-          {tiles.map(t => (
-            <a className="toolkit-tile" key={t.file}
-               href={`${base}/${t.file}`} target="_blank" rel="noopener">
-              <div className="toolkit-tile-img">
-                <img src={`${base}/${t.file}`} alt={`${t.name} stencil sheet`} loading="lazy"/>
-              </div>
-              <div className="toolkit-tile-name">{t.name}</div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const MockupsSection = () => {
-  const items = [
-    { file: "mockups/mockup_1.html", label: "Company homepage",            tag: "For everyone",          desc: "News, holidays, HR forms, and the help everyone needs — on one page." },
-    { file: "mockups/mockup_2.html", label: "Field operations dashboard",  tag: "For maintenance teams", desc: "Safety records, project updates, warehouse stock, and site contacts in one place." },
-    { file: "mockups/mockup_3.html", label: "Leadership briefing",         tag: "For management",        desc: "Quarterly outlook, safety alerts, key dashboards and operational links — at a glance." }
-  ];
-  return (
-    <section id="mockups">
-      <div className="wrap">
-        <div className="section-head">
-          <div>
-            <div className="eyebrow">Real examples — click through</div>
-          </div>
-          <div>
-            <h2 className="h2">What a staff homepage <em>looks like</em> in practice.</h2>
-            <p className="lede" style={{marginTop:24}}>
-              Three working pages from a recent project for an engineering operator — a homepage for everyone, a dashboard for the maintenance team, and a briefing for management. Tap any tile to open the full page.
-            </p>
-          </div>
-        </div>
-        <div className="mockups-grid">
-          {items.map(m => (
-            <a className="mockup" key={m.file} href={m.file} target="_blank" rel="noopener">
-              <div className="mockup-frame">
-                <iframe src={m.file} title={m.label} loading="lazy" tabIndex="-1" scrolling="no"/>
-                <div className="mockup-veil"/>
-              </div>
-              <div className="mockup-meta">
-                <span className="mono">{m.tag}</span>
-                <span className="mockup-name">{m.label}</span>
-                <span className="mockup-desc">{m.desc}</span>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-Object.assign(window, { ServicesSection, ProcessSection, CasesSection, ToolkitSection, MockupsSection });
+Object.assign(window, { ServicesSection, SolutionsSection, ProcessSection });

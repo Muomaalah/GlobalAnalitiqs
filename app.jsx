@@ -23,7 +23,6 @@ const App = () => {
     document.documentElement.style.setProperty('--accent', tweaks.accent);
   }, [tweaks.theme, tweaks.accent]);
 
-  // Reveal-on-scroll
   React.useEffect(() => {
     const els = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
@@ -40,10 +39,8 @@ const App = () => {
         <Hero variant={tweaks.hero}/>
         <Marquee/>
         <ServicesSection/>
-        <ToolkitSection/>
-        <MockupsSection/>
+        <SolutionsSection/>
         <ProcessSection/>
-        <CasesSection/>
         <IndustriesSection/>
         <FAQSection/>
         <ContactSection/>
