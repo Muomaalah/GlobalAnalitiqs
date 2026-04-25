@@ -24,9 +24,9 @@ const Nav = () => (
       </a>
       <div className="nav-links">
         <a href="#services">Services</a>
-        <a href="#process">Process</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#mockups">Mockups</a>
         <a href="#work">Work</a>
-        <a href="#industries">Industries</a>
         <a href="#faq">FAQ</a>
       </div>
       <a href="#contact" className="btn btn-primary">Start a project <Arrow/></a>
