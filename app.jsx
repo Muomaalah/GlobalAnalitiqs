@@ -40,6 +40,8 @@ const App = () => {
         <Hero variant={tweaks.hero}/>
         <Marquee/>
         <ServicesSection/>
+        <ToolkitSection/>
+        <MockupsSection/>
         <ProcessSection/>
         <CasesSection/>
         <IndustriesSection/>

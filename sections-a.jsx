@@ -122,7 +122,8 @@ const ServicesSection = () => {
       desc: "Custom business applications built on the Microsoft Power Platform — from low-code canvas apps to fully-coded TypeScript Code Apps that run inside Power Apps with the governance enterprises require.",
       tags: ["Canvas apps", "Model-driven", "Code Apps"],
       repo: "https://github.com/maxwelltaprah-prog/PowerAppsCodeApps",
-      repoLabel: "PowerAppsCodeApps"
+      repoLabel: "PowerAppsCodeApps",
+      img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/PowerApps.png"
     },
     {
       n: "02",
@@ -131,7 +132,8 @@ const ServicesSection = () => {
       desc: "Modern, on-brand intranets and digital workplaces on SharePoint Online — communications sites, hub architectures, and reusable section mockups your team can actually maintain.",
       tags: ["SharePoint", "M365", "SPFx"],
       repo: "https://github.com/maxwelltaprah-prog/sharepoint-intranet-mockups",
-      repoLabel: "sharepoint-intranet-mockups"
+      repoLabel: "sharepoint-intranet-mockups",
+      iframe: "mockups/mockup_1.html"
     },
     {
       n: "03",
@@ -140,7 +142,8 @@ const ServicesSection = () => {
       desc: "Automate the manual, high-volume work hiding inside operations, HR and finance. Approvals, document flows, notifications, and data sync between the systems you already pay for.",
       tags: ["Power Automate", "Approvals", "RPA"],
       repo: "https://github.com/maxwelltaprah-prog/PowerApps---RDORRANI",
-      repoLabel: "PowerApps---RDORRANI"
+      repoLabel: "PowerApps---RDORRANI",
+      img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Flow.png"
     },
     {
       n: "04",
@@ -149,7 +152,8 @@ const ServicesSection = () => {
       desc: "Integration design across Azure, Power Platform, Microsoft 365 and Dynamics — using the same enterprise stencil libraries, patterns and reference architectures we publish back to the community.",
       tags: ["Azure", "API Mgmt", "Logic Apps"],
       repo: "https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio",
-      repoLabel: "Azure-Stencils-Pack"
+      repoLabel: "Azure-Stencils-Pack",
+      img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Azure.png"
     },
     {
       n: "05",
@@ -158,7 +162,8 @@ const ServicesSection = () => {
       desc: "Dataverse and Power BI models that turn operational data from Dynamics, SharePoint and line-of-business systems into the dashboards leadership actually opens every Monday.",
       tags: ["Power BI", "Dataverse", "Fabric"],
       repo: "https://github.com/maxwelltaprah-prog?tab=repositories",
-      repoLabel: "Reporting work"
+      repoLabel: "Reporting work",
+      img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Power-BI.png"
     },
     {
       n: "06",
@@ -188,7 +193,16 @@ const ServicesSection = () => {
           {services.map(s => (
             <a className="service-card" key={s.n} href={s.repo} target="_blank" rel="noopener">
               <div className="service-card-visual">
-                <ServiceVisual kind={s.kind}/>
+                {s.img ? (
+                  <img src={s.img} alt={`${s.title} reference visual from the Microsoft Integration & Azure Stencils Pack`} loading="lazy"/>
+                ) : s.iframe ? (
+                  <div className="service-card-iframe-wrap">
+                    <iframe src={s.iframe} title={s.title} loading="lazy" tabIndex="-1" scrolling="no"/>
+                    <div className="service-card-iframe-veil"/>
+                  </div>
+                ) : (
+                  <ServiceVisual kind={s.kind}/>
+                )}
               </div>
               <div className="service-card-body">
                 <div className="service-card-meta">
@@ -334,4 +348,92 @@ const CasesSection = () => {
   );
 };
 
-Object.assign(window, { ServicesSection, ProcessSection, CasesSection });
+const ToolkitSection = () => {
+  const base = "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media";
+  const tiles = [
+    { name: "Power Apps",            file: "PowerApps.png" },
+    { name: "Power Automate",        file: "Microsoft-Flow.png" },
+    { name: "Power BI",              file: "Microsoft-Power-BI.png" },
+    { name: "Microsoft Azure",       file: "Microsoft-Azure.png" },
+    { name: "Office 365",            file: "MIS-Office-365.png" },
+    { name: "Integration Patterns",  file: "MIS-Integration-Patterns.png" },
+    { name: "Apps & Systems",        file: "MIS-Apps-and-Systems-Logo-Stencils.png" },
+    { name: "Security & Governance", file: "MIS-Security-and-governance-stencils.png" }
+  ];
+  return (
+    <section id="toolkit">
+      <div className="wrap">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow">Open-source toolkit</div>
+          </div>
+          <div>
+            <h2 className="h2">The same stencil libraries we ship <em>back to the community.</em></h2>
+            <p className="lede" style={{marginTop:24}}>
+              Excerpts from our published <a href="https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>Microsoft Integration & Azure Stencils Pack</a> — the reference architecture vocabulary we use on every engagement.
+            </p>
+          </div>
+        </div>
+        <a href="https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio" target="_blank" rel="noopener" className="toolkit-hero">
+          <img src={`${base}/BizTalk-Microsoft-Integration-Azure-Stencils-Pack.png`} alt="BizTalk and Microsoft Integration / Azure Stencils Pack cover art" loading="lazy"/>
+          <div className="toolkit-hero-meta">
+            <span className="mono">Reference pack</span>
+            <span>BizTalk · Microsoft Integration · Azure</span>
+          </div>
+        </a>
+        <div className="toolkit-grid">
+          {tiles.map(t => (
+            <a className="toolkit-tile" key={t.file}
+               href={`${base}/${t.file}`} target="_blank" rel="noopener">
+              <div className="toolkit-tile-img">
+                <img src={`${base}/${t.file}`} alt={`${t.name} stencil sheet`} loading="lazy"/>
+              </div>
+              <div className="toolkit-tile-name">{t.name}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const MockupsSection = () => {
+  const items = [
+    { file: "mockups/mockup_1.html", label: "Ankor — corporate intranet",  tag: "Comms site" },
+    { file: "mockups/mockup_2.html", label: "Departmental landing page",   tag: "Hub site"   },
+    { file: "mockups/mockup_3.html", label: "News & resources hub",        tag: "Knowledge"  }
+  ];
+  return (
+    <section id="mockups">
+      <div className="wrap">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow">Live mockups</div>
+          </div>
+          <div>
+            <h2 className="h2">SharePoint intranets, <em>rendered.</em></h2>
+            <p className="lede" style={{marginTop:24}}>
+              Three on-brand SharePoint Online layouts from our open <a href="https://github.com/maxwelltaprah-prog/sharepoint-intranet-mockups" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>intranet mockups repo</a> — each tile is a live render, click through to interact with the full page.
+            </p>
+          </div>
+        </div>
+        <div className="mockups-grid">
+          {items.map(m => (
+            <a className="mockup" key={m.file} href={m.file} target="_blank" rel="noopener">
+              <div className="mockup-frame">
+                <iframe src={m.file} title={m.label} loading="lazy" tabIndex="-1" scrolling="no"/>
+                <div className="mockup-veil"/>
+              </div>
+              <div className="mockup-meta">
+                <span className="mono">{m.tag}</span>
+                <span className="mockup-name">{m.label}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+Object.assign(window, { ServicesSection, ProcessSection, CasesSection, ToolkitSection, MockupsSection });
