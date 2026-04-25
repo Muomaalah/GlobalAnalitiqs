@@ -45,7 +45,6 @@ const App = () => {
         <ProcessSection/>
         <CasesSection/>
         <IndustriesSection/>
-        <TestimonialsSection/>
         <FAQSection/>
         <ContactSection/>
         <Footer/>

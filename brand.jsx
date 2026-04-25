@@ -41,75 +41,75 @@ const Hero = ({ variant }) => {
       <div className="grain"/>
       <div className="wrap" style={{position:'relative'}}>
         <div className="hero-tag">
-          <div className="mono" style={{marginBottom:8}}>EST. 2019 — ACCRA / LAGOS / LONDON</div>
-          A small, senior team building custom software for ambitious operators.
+          <div className="mono" style={{marginBottom:8}}>ACCRA · LAGOS · LONDON</div>
+          A small senior team that builds the apps and dashboards your team uses every day.
         </div>
 
-        <div className="eyebrow" style={{marginBottom:32}}>Custom software studio</div>
+        <div className="eyebrow" style={{marginBottom:32}}>A small software studio</div>
 
         {variant === 'split' ? (
           <div className="hero-content">
             <h1 className="display">
-              We build software<br/>
-              that <em>moves</em><br/>
-              the numbers.
+              We build the apps<br/>
+              your team will <em>actually use.</em>
             </h1>
             <div className="lede-wrap">
               <p className="lede">
-                Global Analytiqs designs and ships custom applications for operators who need to cut cost, lift revenue, and run a tighter business — without the bloat of off-the-shelf platforms.
+                The everyday tools that quietly run a business — the staff homepage, the booking form, the dashboard the boss opens on Monday — built around how your people already work.
               </p>
               <div className="hero-cta">
-                <a href="#contact" className="btn btn-primary">Book a call <Arrow/></a>
-                <a href="#work" className="btn btn-ghost">See our work</a>
+                <a href="#contact" className="btn btn-primary">Talk to us <Arrow/></a>
+                <a href="#mockups" className="btn btn-ghost">See real examples</a>
               </div>
             </div>
           </div>
         ) : variant === 'centered' ? (
           <div className="hero-content">
             <h1 className="display">
-              Software,<br/>built to <em>move numbers.</em>
+              Software that does<br/>
+              the <em>heavy lifting.</em>
             </h1>
             <p className="lede" style={{marginTop:32}}>
-              We design and ship custom applications that cut operating cost, lift revenue, and let teams focus on the work that matters.
+              We build the apps, dashboards and automatic workflows that quietly run a business — the things people use every day to do their jobs better, without thinking about it.
             </p>
             <div className="hero-cta">
-              <a href="#contact" className="btn btn-primary">Book a call <Arrow/></a>
-              <a href="#work" className="btn btn-ghost">See our work</a>
+              <a href="#contact" className="btn btn-primary">Talk to us <Arrow/></a>
+              <a href="#mockups" className="btn btn-ghost">See real examples</a>
             </div>
           </div>
         ) : (
           <div className="hero-content">
             <h1 className="display">
-              Custom software<br/>
-              for operators who<br/>
-              <em>measure everything.</em>
+              We build software<br/>
+              <em>so your team doesn't<br/>
+              have to.</em>
             </h1>
             <p className="lede" style={{marginTop:40}}>
-              We design and ship applications that cut operating cost, lift revenue, and give your team back the hours they used to lose to spreadsheets and stitched-together SaaS.
+              The everyday tools that quietly run a business — the staff homepage, the booking form, the report your CFO opens on Monday — built around how your people already work, instead of forcing them to change.
             </p>
             <div className="hero-cta">
-              <a href="#contact" className="btn btn-primary">Book a call <Arrow/></a>
-              <a href="#work" className="btn btn-ghost">See our work</a>
+              <a href="#contact" className="btn btn-primary">Talk to us <Arrow/></a>
+              <a href="#mockups" className="btn btn-ghost">See real examples</a>
             </div>
           </div>
         )}
 
         <div className="hero-meta">
           <div className="hero-meta-item">
-            <span className="mono">Engagements</span>
-            <span className="v">40+</span>
+            <span className="mono">On GitHub</span>
+            <span className="v">6 repos</span>
           </div>
           <div className="hero-meta-item">
-            <span className="mono">Avg. cost reduction</span>
-            <span className="v">31%</span>
+            <span className="mono">Shared back</span>
+            <span className="v">27 sheets</span>
           </div>
           <div className="hero-meta-item">
-            <span className="mono">Time-to-launch</span>
-            <span className="v">8 wks</span>
+            <span className="mono">Typical build</span>
+            <span className="v">4 — 12 wks</span>
           </div>
           <div className="hero-meta-item">
-            <span className="mono">Client retention</span>
-            <span className="v">94%</span>
+            <span className="mono">Cities</span>
+            <span className="v">3</span>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@ const Hero = ({ variant }) => {
 };
 
 const Marquee = () => {
-  const items = ["Power Apps", "SharePoint", "Power Automate", "Azure", "Microsoft 365", "Power BI", "Dataverse", "Dynamics 365", "Claude Code"];
+  const items = ["Staff homepages", "Booking forms", "Mobile apps", "Approval flows", "Live dashboards", "Joining up systems", "Reporting", "Automation", "AI helpers"];
   const Track = () => (
     <span>
       {items.map((t, i) => (
