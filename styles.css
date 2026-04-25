@@ -232,14 +232,18 @@ section {
   border-bottom: 1px solid var(--rule);
   color: var(--ink);
   aspect-ratio: 16 / 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  transition: background 0.25s ease;
+  overflow: hidden;
+  position: relative;
 }
-.service-card-visual svg { width: 64px; height: 64px; display: block; color: var(--ink); }
-.service-card:hover .service-card-visual { background: var(--bg-3); }
+.service-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: saturate(0.85);
+}
+.service-card:hover .service-card-visual img { transform: scale(1.04); }
 
 .service-card-body {
   padding: 24px 26px 28px;
@@ -281,66 +285,72 @@ section {
 @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .services-grid { grid-template-columns: 1fr; } }
 
-/* Solutions — twelve real apps */
+/* Solutions — twelve real apps with photo headers */
 .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 .solution-card {
   background: var(--bg-2);
   border: 1px solid var(--rule);
   border-radius: 12px;
-  padding: 24px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 14px;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .solution-card:hover {
   transform: translateY(-3px);
   border-color: var(--ink);
-  box-shadow: 0 16px 36px -28px rgba(20, 18, 16, 0.4);
+  box-shadow: 0 18px 40px -28px rgba(20, 18, 16, 0.4);
 }
-.solution-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
+.solution-photo {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
   background: var(--paper);
-  border: 1px solid var(--rule);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ink);
-  transition: background 0.25s ease, color 0.25s ease;
+  border-bottom: 1px solid var(--rule);
 }
-.solution-icon svg { width: 32px; height: 32px; display: block; }
-.solution-card:hover .solution-icon { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.solution-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: saturate(0.85);
+}
+.solution-card:hover .solution-photo img { transform: scale(1.04); }
 
+.solution-body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
 .solution-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--accent);
 }
 .solution-title {
   font-family: 'Instrument Serif', serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.15;
   color: var(--ink);
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .solution-desc {
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.5;
   color: var(--ink-2);
-  margin-top: 6px;
+  margin-top: 4px;
 }
-@media (max-width: 1200px) { .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 880px)  { .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1024px) { .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 540px)  { .solutions-grid { grid-template-columns: 1fr; } }
 
 /* Process */
