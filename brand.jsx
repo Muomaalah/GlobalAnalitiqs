@@ -40,11 +40,11 @@ const Hero = ({ variant }) => {
       <div className="grain"/>
       <div className="wrap" style={{position:'relative'}}>
         <div className="hero-tag">
-          <div className="mono" style={{marginBottom:8}}>POWER APPS · POWER AUTOMATE · WEB</div>
+          <div className="mono" style={{marginBottom:8}}>POWER APPS · WEB APPS · POWER AUTOMATE</div>
           We build the apps your team taps every morning — payslips, leave, machine checks, deliveries.
         </div>
 
-        <div className="eyebrow" style={{marginBottom:32}}>A Microsoft Power Apps studio</div>
+        <div className="eyebrow" style={{marginBottom:32}}>A Microsoft Power Apps & web app studio</div>
 
         {variant === 'split' ? (
           <div className="hero-content">
