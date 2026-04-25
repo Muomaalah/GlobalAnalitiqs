@@ -261,4 +261,53 @@ const ProcessSection = () => {
   );
 };
 
-Object.assign(window, { ServicesSection, SolutionsSection, ProcessSection });
+/* ---------- Clients we've worked with ---------- */
+
+const ClientsSection = () => {
+  const clients = [
+    {
+      name: "Ankor Maintenance & Inspection",
+      sector: "Asset integrity · Ghana",
+      img: "clients/ankor.png"
+    },
+    {
+      name: "Ciotek",
+      sector: "Technology",
+      wordmark: true
+    }
+  ];
+  return (
+    <section id="clients" className="clients-section">
+      <div className="wrap">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow">Companies we've worked with</div>
+          </div>
+          <div>
+            <h2 className="h2">Trusted by teams on the <em>factory floor and in the office.</em></h2>
+            <p className="lede" style={{marginTop:24}}>
+              A handful of the businesses we've shipped Power Apps and web apps for. Each project starts with a real bottleneck and ends with something their people use every day.
+            </p>
+          </div>
+        </div>
+        <div className="clients-grid">
+          {clients.map(c => (
+            <div className="client-tile" key={c.name}>
+              <div className="client-logo">
+                {c.img
+                  ? <img src={c.img} alt={`${c.name} logo`} loading="lazy"/>
+                  : <span className="client-wordmark">{c.name}</span>}
+              </div>
+              <div className="client-meta">
+                <div className="client-name">{c.name}</div>
+                <div className="client-sector">{c.sector}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+Object.assign(window, { ServicesSection, SolutionsSection, ProcessSection, ClientsSection });

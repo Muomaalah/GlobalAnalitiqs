@@ -40,6 +40,7 @@ const App = () => {
         <Marquee/>
         <ServicesSection/>
         <SolutionsSection/>
+        <ClientsSection/>
         <ProcessSection/>
         <IndustriesSection/>
         <FAQSection/>
