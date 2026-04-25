@@ -118,9 +118,9 @@ const ServicesSection = () => {
     {
       n: "01",
       kind: "powerapps",
-      title: "Power Apps & Code Apps",
-      desc: "Custom business applications built on the Microsoft Power Platform — from low-code canvas apps to fully-coded TypeScript Code Apps that run inside Power Apps with the governance enterprises require.",
-      tags: ["Canvas apps", "Model-driven", "Code Apps"],
+      title: "Apps your team will actually use",
+      desc: "Custom apps that fit how your people already work — replacing the spreadsheet trail, the back-and-forth emails, and the \"we just do it that way\" processes everyone secretly hates.",
+      tags: ["Phone", "Tablet", "Desktop"],
       repo: "https://github.com/maxwelltaprah-prog/PowerAppsCodeApps",
       repoLabel: "PowerAppsCodeApps",
       img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/PowerApps.png"
@@ -128,9 +128,9 @@ const ServicesSection = () => {
     {
       n: "02",
       kind: "sharepoint",
-      title: "SharePoint & Microsoft 365 intranets",
-      desc: "Modern, on-brand intranets and digital workplaces on SharePoint Online — communications sites, hub architectures, and reusable section mockups your team can actually maintain.",
-      tags: ["SharePoint", "M365", "SPFx"],
+      title: "A staff homepage everyone can find",
+      desc: "One branded place where your people find news, holidays, HR forms, and the colleagues they need — instead of hunting across email threads and shared drives.",
+      tags: ["Branded", "On phones", "Easy to update"],
       repo: "https://github.com/maxwelltaprah-prog/sharepoint-intranet-mockups",
       repoLabel: "sharepoint-intranet-mockups",
       iframe: "mockups/mockup_1.html"
@@ -138,9 +138,9 @@ const ServicesSection = () => {
     {
       n: "03",
       kind: "automate",
-      title: "Power Automate & workflow automation",
-      desc: "Automate the manual, high-volume work hiding inside operations, HR and finance. Approvals, document flows, notifications, and data sync between the systems you already pay for.",
-      tags: ["Power Automate", "Approvals", "RPA"],
+      title: "Workflows that run themselves",
+      desc: "The boring, repeating jobs — approvals, reminders, paperwork shuffling between systems — handled in the background so people can do real work.",
+      tags: ["Approvals", "Reminders", "Auto-sync"],
       repo: "https://github.com/maxwelltaprah-prog/PowerApps---RDORRANI",
       repoLabel: "PowerApps---RDORRANI",
       img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Flow.png"
@@ -148,9 +148,9 @@ const ServicesSection = () => {
     {
       n: "04",
       kind: "azure",
-      title: "Microsoft integration & Azure architecture",
-      desc: "Integration design across Azure, Power Platform, Microsoft 365 and Dynamics — using the same enterprise stencil libraries, patterns and reference architectures we publish back to the community.",
-      tags: ["Azure", "API Mgmt", "Logic Apps"],
+      title: "Joining up the systems you already pay for",
+      desc: "Most companies own ten tools that don't talk to each other. We make them talk — so data flows, alerts get sent, and reports update without anyone copying numbers between tabs.",
+      tags: ["Connected", "Reliable", "Secure"],
       repo: "https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio",
       repoLabel: "Azure-Stencils-Pack",
       img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Azure.png"
@@ -158,9 +158,9 @@ const ServicesSection = () => {
     {
       n: "05",
       kind: "powerbi",
-      title: "Power BI & data analytics",
-      desc: "Dataverse and Power BI models that turn operational data from Dynamics, SharePoint and line-of-business systems into the dashboards leadership actually opens every Monday.",
-      tags: ["Power BI", "Dataverse", "Fabric"],
+      title: "Dashboards leadership will actually open",
+      desc: "Numbers from across the business in one screen — sales, costs, people, jobs done — refreshed automatically. Open it Monday morning and you know where you stand.",
+      tags: ["Live data", "Easy filters", "Phone-friendly"],
       repo: "https://github.com/maxwelltaprah-prog?tab=repositories",
       repoLabel: "Reporting work",
       img: "https://raw.githubusercontent.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio/master/media/Microsoft-Power-BI.png"
@@ -168,9 +168,9 @@ const ServicesSection = () => {
     {
       n: "06",
       kind: "claude",
-      title: "AI-assisted delivery with Claude Code",
-      desc: "We ship faster by pairing senior engineers with Claude Code and Copilot in a controlled delivery workflow — type-safe, reviewed, and locked to enterprise reliability standards.",
-      tags: ["Claude Code", "Copilot", "TypeScript"],
+      title: "AI helpers that let us build faster",
+      desc: "We pair our engineers with AI assistants in a careful, reviewed workflow. You get the same quality, sooner — and a more honest scope from day one.",
+      tags: ["AI-assisted", "Reviewed", "Faster"],
       repo: "https://github.com/maxwelltaprah-prog/claude-code",
       repoLabel: "claude-code"
     }
@@ -180,12 +180,12 @@ const ServicesSection = () => {
       <div className="wrap">
         <div className="section-head">
           <div>
-            <div className="eyebrow">What we do</div>
+            <div className="eyebrow">What we build</div>
           </div>
           <div>
-            <h2 className="h2">Microsoft-stack delivery, built around how your <em>business</em> actually runs.</h2>
+            <h2 className="h2">Six things we build, all the <em>time.</em></h2>
             <p className="lede" style={{marginTop:24}}>
-              We design, build and integrate on Power Platform, SharePoint, Microsoft 365 and Azure — the systems most enterprises already own. Six core capabilities, each backed by working code on <a href="https://github.com/maxwelltaprah-prog" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>our GitHub</a>.
+              We work on the Microsoft tools most companies already own — so you don't end up paying for another platform. Each card below links to real working code on <a href="https://github.com/maxwelltaprah-prog" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>our GitHub</a> so you can see what we ship.
             </p>
           </div>
         </div>
@@ -234,10 +234,10 @@ const ServicesSection = () => {
 
 const ProcessSection = () => {
   const steps = [
-    { n: "01", title: "Discover", desc: "We sit with your team, map the workflow, and find the bottleneck that actually costs you money. No 80-page audit deck.", out: "Diagnostic + ROI model", dur: "1 — 2 weeks" },
-    { n: "02", title: "Design", desc: "A working prototype in days, not months. Stakeholders click through it before we write production code.", out: "Clickable prototype + scope", dur: "2 — 3 weeks" },
-    { n: "03", title: "Build", desc: "A senior squad ships in tight weekly increments. You see progress every Friday and shape direction in real time.", out: "Live application, weekly", dur: "4 — 12 weeks" },
-    { n: "04", title: "Operate", desc: "We hand off cleanly — or stay on as your retained engineering partner — with monitoring, training, and a roadmap of next moves.", out: "Handover + retainer (optional)", dur: "Ongoing" }
+    { n: "01", title: "Listen",     desc: "We sit with your team for a couple of weeks and find the one thing that, if fixed, would save the most time or money. No 80-page audit, no slide deck.", out: "A clear write-up of what's worth building", dur: "1 — 2 weeks" },
+    { n: "02", title: "Sketch",     desc: "We mock up a working version you can click through within days. Your people react to a real screen instead of a slide.", out: "A clickable demo and an honest scope", dur: "2 — 3 weeks" },
+    { n: "03", title: "Build",      desc: "A small senior team ships it in weekly chunks. You see the latest version every Friday and can change direction at the end of any week.", out: "A live, working app — every week", dur: "4 — 12 weeks" },
+    { n: "04", title: "Hand over",  desc: "We hand over a clean, documented app — or stay on as your retained team — with training, monitoring, and a list of what to do next.", out: "Documentation, training, and a roadmap", dur: "Ongoing if you want" }
   ];
   return (
     <section id="process">
@@ -247,9 +247,9 @@ const ProcessSection = () => {
             <div className="eyebrow">How we work</div>
           </div>
           <div>
-            <h2 className="h2">A four-step <em>operating rhythm.</em></h2>
+            <h2 className="h2">Four simple <em>steps.</em></h2>
             <p className="lede" style={{marginTop:24}}>
-              No theatre, no inflated discovery phases. Each step has a deliverable you can defend to your CFO.
+              No drawn-out discovery, no vague "transformation programme". Each step has a clear thing you walk away with.
             </p>
           </div>
         </div>
@@ -262,7 +262,7 @@ const ProcessSection = () => {
                 <p style={{marginTop:12}}>{s.desc}</p>
               </div>
               <div className="col-3">
-                <div className="mono" style={{marginBottom:8}}>Deliverable</div>
+                <div className="mono" style={{marginBottom:8}}>You walk away with</div>
                 <p style={{fontSize:14, color:'var(--ink-2)'}}>{s.out}</p>
               </div>
               <div className="duration">{s.dur}</div>
@@ -277,40 +277,36 @@ const ProcessSection = () => {
 const CasesSection = () => {
   const cases = [
     {
-      industry: "Logistics", year: "2025",
-      title: "Routing engine for a 4PL with 280 drivers",
-      desc: "Replaced a manual dispatch process with a routing tool that learns from historical loads.",
-      stat: "−34%", statLabel: "Operating cost / delivery"
+      industry: "For staff at work",
+      title: "A SharePoint pattern library — three reusable intranets",
+      desc: "An open library of three ready-to-rebrand staff homepages: a corporate page, a maintenance team dashboard, and a leadership briefing. Any business can clone it and replace the logos.",
+      stat: "3", statLabel: "Reusable templates",
+      repo: "https://github.com/maxwelltaprah-prog/sharepoint-intranet-mockups",
+      repoLabel: "sharepoint-intranet-mockups"
     },
     {
-      industry: "Manufacturing", year: "2025",
-      title: "Production-floor command centre",
-      desc: "Real-time view of OEE, downtime and quality across three plants and four shifts.",
-      stat: "+22%", statLabel: "Throughput, line 2"
+      industry: "For architects and consultants",
+      title: "A free shape pack for drawing Microsoft systems",
+      desc: "The diagrams consultants draw to explain a Microsoft setup — Power Apps, Azure, Office 365, integration patterns. We maintain a free pack used by teams across the industry.",
+      stat: "27", statLabel: "Stencil sheets shared",
+      repo: "https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio",
+      repoLabel: "Azure-Stencils-Pack"
     },
     {
-      industry: "Financial Services", year: "2024",
-      title: "Underwriting workbench for an SME lender",
-      desc: "Cut decisioning from five days to under twenty minutes using a workflow + ML score.",
-      stat: "5d → 18m", statLabel: "Time-to-decision"
+      industry: "For developers building inside Microsoft",
+      title: "Power Apps, but built in proper code",
+      desc: "Most Power Apps work is drag-and-drop; ours is written in TypeScript so it's easier to test, review and hand over. The starter we use is open for any team.",
+      stat: "TypeScript", statLabel: "Type-safe by default",
+      repo: "https://github.com/maxwelltaprah-prog/PowerAppsCodeApps",
+      repoLabel: "PowerAppsCodeApps"
     },
     {
-      industry: "Healthcare", year: "2024",
-      title: "Patient-intake portal for a network of clinics",
-      desc: "A single intake flow replacing six paper forms; integrated with the existing EHR.",
-      stat: "+41%", statLabel: "Bookings completed"
-    },
-    {
-      industry: "Retail", year: "2024",
-      title: "Replenishment dashboard for a 60-store chain",
-      desc: "Forecasting + reorder rules cut stock-outs and freed up working capital.",
-      stat: "−27%", statLabel: "Stock-outs / month"
-    },
-    {
-      industry: "Energy", year: "2023",
-      title: "Field-services app for a utility provider",
-      desc: "Offline-first mobile app for technicians; replaced paper job sheets and SMS dispatch.",
-      stat: "+3.2", statLabel: "Jobs / tech / day"
+      industry: "For teams using AI assistants",
+      title: "An enterprise-grade rebuild of Claude Code",
+      desc: "We rebuilt Anthropic's coding assistant from the ground up in TypeScript with full type-checking — so we and other teams can use it inside enterprise environments with confidence.",
+      stat: "0 errors", statLabel: "Type-checked end to end",
+      repo: "https://github.com/maxwelltaprah-prog/claude-code",
+      repoLabel: "claude-code"
     }
   ];
   return (
@@ -318,21 +314,26 @@ const CasesSection = () => {
       <div className="wrap">
         <div className="section-head">
           <div>
-            <div className="eyebrow">Selected work</div>
+            <div className="eyebrow">Things we've shipped</div>
           </div>
           <div>
-            <h2 className="h2">Numbers our clients can <em>defend in a board room.</em></h2>
+            <h2 className="h2">Real projects you can <em>open right now.</em></h2>
             <p className="lede" style={{marginTop:24}}>
-              A small, deliberate sample. Every project below has a measurable line on the P&amp;L behind it.
+              We publish a lot of what we build. Each card below links to working code on GitHub — open it, read it, copy it. No screenshots-of-screenshots, no NDA brochure-ware.
             </p>
           </div>
         </div>
-        <div className="cases">
+        <div className="cases cases-real">
           {cases.map((c, i) => (
-            <div className="case" key={i}>
+            <a className="case" key={i} href={c.repo} target="_blank" rel="noopener">
               <div className="case-meta">
                 <span className="case-industry">{c.industry}</span>
-                <span className="case-year">{c.year}</span>
+                <span className="case-year">
+                  <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                    <path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.34c-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.89-1.16-.89-1.16-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.5-1.07-1.77-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 3.95c.68 0 1.36.09 2 .27 1.53-1.03 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.83 1.28.83 2.15 0 3.07-1.87 3.74-3.65 3.94.29.25.54.74.54 1.49v2.21c0 .21.15.46.55.38A8 8 0 0 0 8 0z"/>
+                  </svg>
+                  {c.repoLabel}
+                </span>
               </div>
               <h3>{c.title}</h3>
               <p className="case-desc">{c.desc}</p>
@@ -340,7 +341,7 @@ const CasesSection = () => {
                 <div className="case-stat">{c.stat}</div>
                 <div className="case-stat-label">{c.statLabel}</div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -365,20 +366,20 @@ const ToolkitSection = () => {
       <div className="wrap">
         <div className="section-head">
           <div>
-            <div className="eyebrow">Open-source toolkit</div>
+            <div className="eyebrow">Things we've shared</div>
           </div>
           <div>
-            <h2 className="h2">The same stencil libraries we ship <em>back to the community.</em></h2>
+            <h2 className="h2">Tools we built once and <em>gave away.</em></h2>
             <p className="lede" style={{marginTop:24}}>
-              Excerpts from our published <a href="https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>Microsoft Integration & Azure Stencils Pack</a> — the reference architecture vocabulary we use on every engagement.
+              When something's useful for one client, it's usually useful for the next — so we publish it for free. Below is our <a href="https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>shape pack</a> for drawing Microsoft systems, used by teams across the industry.
             </p>
           </div>
         </div>
         <a href="https://github.com/maxwelltaprah-prog/Microsoft-Integration-and-Azure-Stencils-Pack-for-Visio" target="_blank" rel="noopener" className="toolkit-hero">
-          <img src={`${base}/BizTalk-Microsoft-Integration-Azure-Stencils-Pack.png`} alt="BizTalk and Microsoft Integration / Azure Stencils Pack cover art" loading="lazy"/>
+          <img src={`${base}/BizTalk-Microsoft-Integration-Azure-Stencils-Pack.png`} alt="Cover art for our Microsoft Integration and Azure shape pack — a free library we publish on GitHub" loading="lazy"/>
           <div className="toolkit-hero-meta">
-            <span className="mono">Reference pack</span>
-            <span>BizTalk · Microsoft Integration · Azure</span>
+            <span className="mono">Free download</span>
+            <span>Shape pack — Microsoft &amp; Azure</span>
           </div>
         </a>
         <div className="toolkit-grid">
@@ -399,21 +400,21 @@ const ToolkitSection = () => {
 
 const MockupsSection = () => {
   const items = [
-    { file: "mockups/mockup_1.html", label: "Ankor — corporate intranet",  tag: "Comms site" },
-    { file: "mockups/mockup_2.html", label: "Departmental landing page",   tag: "Hub site"   },
-    { file: "mockups/mockup_3.html", label: "News & resources hub",        tag: "Knowledge"  }
+    { file: "mockups/mockup_1.html", label: "Company homepage",            tag: "For everyone",          desc: "News, holidays, HR forms, and the help everyone needs — on one page." },
+    { file: "mockups/mockup_2.html", label: "Field operations dashboard",  tag: "For maintenance teams", desc: "Safety records, project updates, warehouse stock, and site contacts in one place." },
+    { file: "mockups/mockup_3.html", label: "Leadership briefing",         tag: "For management",        desc: "Quarterly outlook, safety alerts, key dashboards and operational links — at a glance." }
   ];
   return (
     <section id="mockups">
       <div className="wrap">
         <div className="section-head">
           <div>
-            <div className="eyebrow">Live mockups</div>
+            <div className="eyebrow">Real examples — click through</div>
           </div>
           <div>
-            <h2 className="h2">SharePoint intranets, <em>rendered.</em></h2>
+            <h2 className="h2">What a staff homepage <em>looks like</em> in practice.</h2>
             <p className="lede" style={{marginTop:24}}>
-              Three on-brand SharePoint Online layouts from our open <a href="https://github.com/maxwelltaprah-prog/sharepoint-intranet-mockups" target="_blank" rel="noopener" style={{color:'var(--accent)'}}>intranet mockups repo</a> — each tile is a live render, click through to interact with the full page.
+              Three working pages from a recent project for an engineering operator — a homepage for everyone, a dashboard for the maintenance team, and a briefing for management. Tap any tile to open the full page.
             </p>
           </div>
         </div>
@@ -427,6 +428,7 @@ const MockupsSection = () => {
               <div className="mockup-meta">
                 <span className="mono">{m.tag}</span>
                 <span className="mockup-name">{m.label}</span>
+                <span className="mockup-desc">{m.desc}</span>
               </div>
             </a>
           ))}

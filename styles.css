@@ -376,6 +376,35 @@ section {
   .services-grid { grid-template-columns: 1fr; }
 }
 
+/* Cases as link cards (real GitHub artifacts) */
+.cases-real { grid-template-columns: repeat(2, 1fr); }
+.cases-real .case {
+  text-decoration: none;
+  color: inherit;
+  min-height: 280px;
+}
+.cases-real .case:hover { transform: translateY(-3px); border-color: var(--ink); }
+.cases-real .case-meta { gap: 12px; }
+.cases-real .case-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+.cases-real .case-year svg { opacity: 0.7; }
+@media (max-width: 880px) { .cases-real { grid-template-columns: 1fr; } }
+
+/* Mockup description line */
+.mockup-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-top: 4px;
+}
+
 /* Process */
 .process-list { display: grid; grid-template-columns: 1fr; gap: 0; }
 .process-step {
